@@ -7,9 +7,9 @@ spec:
   project: default
   source:
     #TODO - do not hardcode
-    repoURL: https://github.com/Rpc-h/infrastructure
-    targetRevision: staging
-    path: charts/funding-service
+    repoURL: https://github.com/Rpc-h/helm-charts
+    targetRevision: main
+    path: funding-service
     plugin:
       env:
         - name: HELM_VALUES

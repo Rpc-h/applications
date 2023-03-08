@@ -7,9 +7,9 @@ spec:
   project: default
   source:
     #TODO - do not hardcode
-    repoURL: https://github.com/Rpc-h/infrastructure
-    targetRevision: staging
-    path: charts/discovery-platform
+    repoURL: https://github.com/Rpc-h/helm-charts
+    targetRevision: main
+    path: discovery-platform
     plugin:
       env:
         - name: HELM_VALUES
