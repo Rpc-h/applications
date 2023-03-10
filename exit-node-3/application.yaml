@@ -17,7 +17,7 @@ spec:
             hopr:
               image:
                 repository: gcr.io/hoprassociation/hoprd
-                tag: 1.92.8@sha256:822ead8398b00c2564e755f742dea218b92e9dacdc17b2eda2b6b9899631d3e3
+                tag: 1.92.12@sha256:6f0de3ae4f2a7a692778ebe242fb613214074d71e2cd5aebaa096a876db0e15d
               envFrom:
                 - type: secret
                   name: exit-node-3-staging
