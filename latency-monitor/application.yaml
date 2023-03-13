@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: latency-monitor-staging
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Rpc-h/helm-charts
+    targetRevision: main
+    path: latency-monitor
+    plugin:
+      env:
+        - name: HELM_VALUES
+          value: |
+            image:
+              repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/latency-monitor
+              tag: 913d53e
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: staging
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: true
+    syncOptions:
+      - CreateNamespace=true
+      - PruneLast=true
