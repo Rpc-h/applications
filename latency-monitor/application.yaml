@@ -17,7 +17,7 @@ spec:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/latency-monitor
               tag: 913d53e
             env:
-              MONITOR_RPC_SERVER_ADDRESS=http://rpc-server.staging:8080/?exit-provider=https://primary.gnosis-chain.rpc.hoprtech.net
+              MONITOR_RPC_SERVER_ADDRESS: "http://rpc-server.staging:8080/?exit-provider=https://primary.gnosis-chain.rpc.hoprtech.net"
   destination:
     server: https://kubernetes.default.svc
     namespace: staging
