@@ -18,7 +18,7 @@ spec:
               tag: 913d53e
             env:
               - name: "MONITOR_RPC_SERVER_ADDRESS"
-                value: "http://rpc-server.staging:8080/?exit-provider=https://primary.gnosis-chain.rpc.hoprtech.net"
+                value: "http://rpc-server-staging.staging:8080/?exit-provider=https://primary.gnosis-chain.rpc.hoprtech.net"
   destination:
     server: https://kubernetes.default.svc
     namespace: staging

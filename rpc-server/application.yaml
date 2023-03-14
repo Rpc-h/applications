@@ -24,7 +24,7 @@ spec:
               - name: "RESPONSE_TIMEOUT"
                 value: "20000"
               - name: "DISCOVERY_PLATFORM_API_ENDPOINT"
-                value: "https://staging.discovery.rpch.tech"
+                value: "http://discovery-platform-staging.staging"
               - name: "PORT"
                 value: "8080"
               - name: "DATA_DIR"
