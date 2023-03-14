@@ -19,12 +19,18 @@ spec:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server
               tag: 429d8fa
             env:
-              DEBUG: "rpch*,-*metrics"
-              RESPONSE_TIMEOUT: "20000"
-              DISCOVERY_PLATFORM_API_ENDPOINT: "https://staging.discovery.rpch.tech"
-              PORT: "8080"
-              DATA_DIR: "app"
-              CLIENT: "who-drink-soil-medicine-thumb"
+              - name: "DEBUG"
+                value: "rpch*,-*metrics"
+              - name: "RESPONSE_TIMEOUT"
+                value: "20000"
+              - name: "DISCOVERY_PLATFORM_API_ENDPOINT"
+                value: "https://staging.discovery.rpch.tech"
+              - name: "PORT"
+                value: "8080"
+              - name: "DATA_DIR"
+                value: "app"
+              - name: "CLIENT"
+                value: "who-drink-soil-medicine-thumb"
   destination:
     server: https://kubernetes.default.svc
     namespace: staging
