@@ -1,23 +1,30 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: latency-monitor-staging
+  name: rpc-server-staging
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/Rpc-h/helm-charts
     targetRevision: main
-    path: latency-monitor
+    path: rpc-server
     plugin:
       env:
         - name: HELM_VALUES
           value: |
+            service:
+              port: 8080
             image:
-              repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/latency-monitor
-              tag: 913d53e
-            env:
-              MONITOR_RPC_SERVER_ADDRESS=http://rpc-server.staging:8080/?exit-provider=https://primary.gnosis-chain.rpc.hoprtech.net
+              repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server
+              tag: 429d8fa
+              env:
+                DEBUG: "rpch*,-*metrics"
+                RESPONSE_TIMEOUT: "20000"
+                DISCOVERY_PLATFORM_API_ENDPOINT: "https://staging.discovery.rpch.tech"
+                PORT: "8080"
+                DATA_DIR: "app"
+                CLIENT: "who-drink-soil-medicine-thumb"
   destination:
     server: https://kubernetes.default.svc
     namespace: staging
