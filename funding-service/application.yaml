@@ -16,7 +16,7 @@ spec:
           value: |
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/funding-service
-              tag: 1144dfa
+              tag: 5c85e6e
             envFrom:
               - type: secret
                 name: funding-service-staging
