@@ -27,6 +27,9 @@ spec:
                 value: "http://funding-service-staging.staging:3010"
               - name: "DEBUG"
                 value: "rpch*,-*metrics"
+            service:
+              annotations:
+                traefik.ingress.kubernetes.io/router.middlewares: traefik-rate-limiting@kubernetescrd
             ingress:
               enabled: true
               className: ""
