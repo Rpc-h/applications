@@ -72,7 +72,7 @@ spec:
               enabled: true
               className: ""
               annotations:
-                cert-manager.io/cluster-issuer: rpch-tech
+                cert-manager.io/cluster-issuer: production
               hosts:
                 - host: staging.exit-node-1.rpch.tech
                   paths:
