@@ -17,8 +17,10 @@ spec:
               port: 1234
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/latency-monitor
-              tag: 85d215f
+              tag: "a707486"
             env:
+              - name: "MONITOR_LOG_LEVEL"
+                value: "0"
               - name: "MONITOR_RPC_SERVER_ADDRESS"
                 value: "http://rpc-server-staging.staging:8080/?exit-provider=https://primary.gnosis-chain.rpc.hoprtech.net"
   destination:
