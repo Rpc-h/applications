@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/hoprnet/hoprd-operator
-    targetRevision: master
+    targetRevision: rpch
     path: charts/hoprd-operator
     plugin:
       env:
