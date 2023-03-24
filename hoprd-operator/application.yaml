@@ -16,7 +16,7 @@ spec:
             ingress:
               enabled: true
             replicator:
-              enabled: false
+              enabled: true
   destination:
     server: https://kubernetes.default.svc
     namespace: staging
