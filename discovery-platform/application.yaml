@@ -29,7 +29,7 @@ spec:
                 value: "rpch*,-*metrics"
             ingress:
               enabled: true
-              className: ""
+              className: traefik
               annotations:
                 cert-manager.io/cluster-issuer: production
                 traefik.ingress.kubernetes.io/router.middlewares: traefik-rate-limiting@kubernetescrd
