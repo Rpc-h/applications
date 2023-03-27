@@ -13,6 +13,8 @@ spec:
       env:
         - name: HELM_VALUES
           value: |
+            secretName: hoprd
+            secretKeyName: PRIVATE_KEY
             ingress:
               enabled: true
               ingressClassName: traefik
