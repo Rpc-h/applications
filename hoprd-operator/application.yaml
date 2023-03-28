@@ -16,6 +16,8 @@ spec:
             operator:
               secretName: hoprd
               secretKeyName: PRIVATE_KEY
+              persistence:
+                storageClassName: main
             ingress:
               enabled: true
               ingressClassName: traefik
