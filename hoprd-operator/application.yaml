@@ -15,7 +15,6 @@ spec:
           value: |
             operator:
               secretName: hoprd
-              secretKeyName: PRIVATE_KEY
               persistence:
                 storageClassName: main
               ingress:
