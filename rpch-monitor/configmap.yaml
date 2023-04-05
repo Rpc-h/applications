@@ -32,3 +32,4 @@ kind: ConfigMap
 metadata:
   creationTimestamp: null
   name: rpch-monitor
+  namespace: rpch-monitor
