@@ -57,6 +57,11 @@ spec:
           volumeMounts:
             - mountPath: /mnt
               name: mnt
+            - name: index
+              mountPath: /mnt/index.html
       volumes:
         - name: mnt
           emptyDir: {}
+        - name: index
+          configMap:
+            name: rpch-monitor

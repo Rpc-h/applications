@@ -15,8 +15,6 @@ spec:
           value: |
             operator:
               secretName: hoprd
-              persistence:
-                storageClassName: main
               ingress:
                 ingressClassName: traefik
                 dnsDomain: hoprd.rpch.tech
