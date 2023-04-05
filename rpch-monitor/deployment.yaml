@@ -55,9 +55,9 @@ spec:
             - containerPort: 8000
               name: http
           volumeMounts:
-            - name: index
-              mountPath: /mnt/
+            - name: mnt
+              mountPath: /mnt
       volumes:
-        - name: index
+        - name: mnt
           configMap:
             name: rpch-monitor
