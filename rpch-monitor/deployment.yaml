@@ -59,5 +59,4 @@ spec:
               mountPath: /mnt
       volumes:
         - name: mnt
-          configMap:
-            name: rpch-monitor
+          emptyDir: {}
