@@ -14,6 +14,8 @@ spec:
         - name: HELM_VALUES
           value: |
             operator:
+              persistence:
+                storageClassName: main
               secretName: hoprd
               ingress:
                 ingressClassName: traefik
