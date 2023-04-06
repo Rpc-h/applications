@@ -10,3 +10,9 @@ spec:
   endpoints:
     - port: "http"
       interval: 30s
+      relabelings:
+        #Expose discovery stage meta labels as real labels
+        - sourceLabels: [ __meta_kubernetes_pod_container_image ]
+          regex: (.*)
+          targetLabel: image
+          action: replace
