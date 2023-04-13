@@ -21,6 +21,7 @@ spec:
                 ingressClassName: traefik
                 dnsDomain: hoprd.rpch.tech
                 annotations:
+                  traefik.ingress.kubernetes.io/router.entrypoints: websecure
                   cert-manager.io/cluster-issuer: production
             adminUI:
               enabled: true
@@ -29,6 +30,8 @@ spec:
                 ingressClassName: traefik
                 hostname: admin.hoprd.rpch.tech
                 annotations:
+                  traefik.ingress.kubernetes.io/router.entrypoints: websecure
+                  traefik.ingress.kubernetes.io/router.middlewares: traefik-forward-auth@kubernetescrd
                   cert-manager.io/cluster-issuer: production
             replicator:
               enabled: true
