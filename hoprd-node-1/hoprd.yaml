@@ -15,4 +15,11 @@ spec:
     enabled: true
   secret:
     secretName: hoprd-node-1
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 1.9Gi
+    requests:
+      cpu: 1000m
+      memory: 1.9Gi
   version: riga
