@@ -7,7 +7,6 @@ spec:
   config:
     autoRedeemTickets: true
     announce: false
-  #   networkQualityThreshold: 0.6
   enabled: true
   environmentName: monte_rosa
   ingress:
@@ -16,11 +15,4 @@ spec:
     enabled: true
   secret:
     secretName: hoprd-node-2
-  # resources:
-  #   limits:
-  #     cpu: 1200m
-  #     memory: 2Gi
-  #   requests:
-  #     cpu: 750m
-  #     memory: 256Mi
   version: riga

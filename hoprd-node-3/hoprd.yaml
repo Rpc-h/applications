@@ -1,7 +1,7 @@
 apiVersion: hoprnet.org/v1alpha
 kind: Hoprd
 metadata:
-  name: hoprd-node-1
+  name: hoprd-node-3
   namespace: staging
 spec:
   config:
@@ -14,5 +14,5 @@ spec:
   monitoring:
     enabled: true
   secret:
-    secretName: hoprd-node-1
+    secretName: hoprd-node-3
   version: riga
