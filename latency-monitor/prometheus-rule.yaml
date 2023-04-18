@@ -20,10 +20,10 @@ spec:
         - alert: LatencyMonitorHighFailureCount
           annotations:
             description: >-
-              Failed RPCh latency request count has been more than 3 for 10 minutes.
+              Failed RPCh latency request count has been more than 3 for 3 minutes.
             summary: Failed latency request count is very high.
           expr: increase(rpch_latencies_failure_count[60s]) > 3
-          for: 10m
+          for: 3m
           labels:
             channels: telegram
             severity: warning
