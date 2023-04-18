@@ -17,8 +17,6 @@ spec:
               image:
                 tag: latest
                 pullPolicy: Always
-              persistence:
-                storageClassName: main
               secretName: hoprd
               ingress:
                 ingressClassName: traefik
