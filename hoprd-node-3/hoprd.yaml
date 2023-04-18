@@ -22,4 +22,4 @@ spec:
     requests:
       cpu: 1000m
       memory: 1.9Gi
-  version: riga
+  version: "bratislava"
