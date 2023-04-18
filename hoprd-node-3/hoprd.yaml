@@ -8,7 +8,7 @@ spec:
     autoRedeemTickets: true
     announce: false
   enabled: true
-  networkName: monte_rosa
+  network: monte_rosa
   ingress:
     enabled: true
   monitoring:
