@@ -29,7 +29,7 @@ spec:
               ingress:
                 enabled: true
                 ingressClassName: traefik
-                hostname: admin.hoprd.rpch.tech
+                hostname: admin.staging.hoprd.rpch.tech
                 annotations:
                   traefik.ingress.kubernetes.io/router.entrypoints: websecure
                   traefik.ingress.kubernetes.io/router.middlewares: traefik-forward-auth@kubernetescrd
