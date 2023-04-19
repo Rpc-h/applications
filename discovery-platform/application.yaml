@@ -21,6 +21,8 @@ spec:
             envFrom:
               - type: secret
                 name: discovery-platform-staging
+            service:
+              name: "http"
             env:
               - name: "SKIP_CHECK_COMMITMENT"
                 value: "true"
