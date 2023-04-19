@@ -1,0 +1,60 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rpch-node-1-staging
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Rpc-h/helm-charts
+    targetRevision: main
+    path: rpch-node
+    plugin:
+      env:
+        - name: HELM_VALUES
+          value: |
+            image:
+              repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/exit-node
+              tag: 9f92096
+            envFrom:
+              - type: secret
+                name: rpch-node-1-staging
+            env:
+              - name: "HOPRD_API_ENDPOINT"
+                value: "https://hoprd-node-1.staging.hoprd.rpch.tech"
+              - name: "DEBUG"
+                value: "rpch*,-*metrics"
+              - name: "RPCH_IDENTITY_FILE"
+                value: "/mnt/identity/.rpch-identity"
+              - name: "RPCH_DATA_DIR"
+                value: "/mnt/data"
+            securityContext:
+              runAsUser: 0 #TODO - this is bad
+              runAsGroup: 0 #TODO - this is bad
+            ingress:
+              enabled: true
+              className: traefik
+              annotations:
+                traefik.ingress.kubernetes.io/router.entrypoints: websecure
+                cert-manager.io/cluster-issuer: production
+              hosts:
+                - host: rpch-node-1.staging.rpch.tech
+                  paths:
+                    - path: /
+                      pathType: ImplementationSpecific
+                      port: 3001
+              tls:
+                - secretName: rpch-node-1.staging.rpch.tech-tls
+                  hosts:
+                    - rpch-node-1.staging.rpch.tech
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: staging
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: true
+    syncOptions:
+      - CreateNamespace=true
+      - PruneLast=true
