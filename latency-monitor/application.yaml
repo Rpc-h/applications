@@ -21,6 +21,8 @@ spec:
             env:
               - name: "MONITOR_LOG_LEVEL"
                 value: "0"
+              - name: "MONITOR_METRICS_REQUEST_INTERVAL"
+                value: "1"
               - name: "MONITOR_RPC_SERVER_ADDRESS"
                 value: "http://rpc-server-staging.staging:8080/?exit-provider=https://primary.gnosis-chain.rpc.hoprtech.net"
   destination:
