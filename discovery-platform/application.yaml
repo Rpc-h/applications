@@ -16,7 +16,7 @@ spec:
           value: |
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/discovery-platform
-              tag: 0aa7768
+              tag: 1a14b83
             replicaCount: 3
             envFrom:
               - type: secret
