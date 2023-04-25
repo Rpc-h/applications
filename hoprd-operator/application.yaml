@@ -15,7 +15,7 @@ spec:
           value: |
             operator:
               persistence:
-                size: 50Mb
+                size: 50Mi
                 storageClassName: standard
               image:
                 tag: latest
