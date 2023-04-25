@@ -14,6 +14,9 @@ spec:
         - name: HELM_VALUES
           value: |
             operator:
+              persistence:
+                size: 50Mb
+                storageClassName: standard
               image:
                 tag: latest
                 pullPolicy: Always

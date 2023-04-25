@@ -1,0 +1,25 @@
+apiVersion: hoprnet.org/v1alpha
+kind: Hoprd
+metadata:
+  name: hoprd-node-6
+  namespace: staging
+spec:
+  config:
+    autoRedeemTickets: true
+    announce: false
+  enabled: true
+  network: monte_rosa
+  ingress:
+    enabled: true
+  monitoring:
+    enabled: true
+  secret:
+    secretName: hoprd-node-6
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 1.9Gi
+    requests:
+      cpu: 1000m
+      memory: 1.9Gi
+  version: "bratislava"
