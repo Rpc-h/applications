@@ -41,7 +41,7 @@ spec:
               enabled: true
   destination:
     server: https://kubernetes.default.svc
-    namespace: staging
+    namespace: staging-operator
   syncPolicy:
     automated:
       prune: true
