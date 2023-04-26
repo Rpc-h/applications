@@ -20,7 +20,7 @@ spec:
               image:
                 tag: latest
                 pullPolicy: Always
-              secretName: hoprd
+              secretName: hoprd-operator
               ingress:
                 ingressClassName: traefik
                 dnsDomain: hoprd.rpch.tech
