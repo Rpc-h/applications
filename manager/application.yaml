@@ -16,7 +16,7 @@ spec:
           value: |
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/manager
-              tag: 0aa7768
+              tag: f8e2656
             envFrom:
               - type: secret
                 name: manager-staging
