@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      argocd.argoproj.io/instance: staging-discovery-platform
+      app.kubernetes.io/instance: staging-latency-monitor
   endpoints:
     - port: "http"
       interval: 30s
