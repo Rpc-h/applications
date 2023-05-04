@@ -5,7 +5,7 @@ metadata:
   labels:
     app: rpch-monitor
   name: rpch-monitor
-  namespace: rpch-monitor
+  namespace: staging
 spec:
   ports:
   - name: "http"

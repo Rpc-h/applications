@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   creationTimestamp: null
   name: rpch-monitor
-  namespace: rpch-monitor
+  namespace: staging
   annotations:
     cert-manager.io/cluster-issuer: production
 spec:
