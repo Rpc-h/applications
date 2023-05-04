@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      argocd.argoproj.io/instance: discovery-platform
+      argocd.argoproj.io/instance: staging-discovery-platform
   endpoints:
     - port: "http"
       interval: 30s
