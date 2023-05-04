@@ -7,19 +7,22 @@ spec:
   project: default
   source:
     #TODO - do not hardcode
-    repoURL: https://github.com/Rpc-h/infrastructure
-    targetRevision: staging
-    path: charts/discovery-platform
+    repoURL: https://github.com/Rpc-h/helm-charts
+    targetRevision: main
+    path: discovery-platform
     plugin:
       env:
         - name: HELM_VALUES
           value: |
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/discovery-platform
-              tag: 1144dfa
+              tag: "2969662"
+            replicaCount: 3
             envFrom:
               - type: secret
                 name: discovery-platform-staging
+            service:
+              name: "http"
             env:
               - name: "SKIP_CHECK_COMMITMENT"
                 value: "true"
@@ -29,9 +32,10 @@ spec:
                 value: "rpch*,-*metrics"
             ingress:
               enabled: true
-              className: ""
+              className: traefik
               annotations:
-                cert-manager.io/cluster-issuer: rpch-tech
+                cert-manager.io/cluster-issuer: production
+                traefik.ingress.kubernetes.io/router.middlewares: traefik-rate-limiting@kubernetescrd
               hosts:
                 - host: staging.discovery.rpch.tech
                   paths:
