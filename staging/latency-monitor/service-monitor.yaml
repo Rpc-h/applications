@@ -1,12 +1,12 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: latency-monitor-staging
+  name: latency-monitor
   namespace: staging
 spec:
   selector:
     matchLabels:
-      argocd.argoproj.io/instance: latency-monitor-staging
+      argocd.argoproj.io/instance: latency-monitor
   endpoints:
     - port: "http"
       interval: 30s
