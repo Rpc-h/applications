@@ -27,7 +27,7 @@ spec:
               - name: "SKIP_CHECK_COMMITMENT"
                 value: "true"
               - name: "FUNDING_SERVICE_URL"
-                value: "http://funding-service.staging:3010"
+                value: "http://staging-funding-service.staging:3010"
               - name: "DEBUG"
                 value: "rpch*,-*metrics"
             ingress:
