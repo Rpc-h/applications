@@ -1,11 +1,11 @@
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
-  name: latency-monitor-staging
+  name: latency-monitor
   namespace: staging
 spec:
   groups:
-    - name: latency-monitor-staging
+    - name: latency-monitor
       rules:
         - alert: LatencyMonitorHighLatency
           annotations:

@@ -1,10 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: latency-monitor-staging
+  name: latency-monitor
   namespace: argocd
 spec:
-  project: default
+  project: staging
   source:
     repoURL: https://github.com/Rpc-h/helm-charts
     targetRevision: main
@@ -24,7 +24,7 @@ spec:
               - name: "MONITOR_METRICS_REQUEST_INTERVAL"
                 value: "1"
               - name: "MONITOR_RPC_SERVER_ADDRESS"
-                value: "http://rpc-server-staging.staging:8080/?exit-provider=https://primary.gnosis-chain.rpc.hoprtech.net"
+                value: "http://rpc-server.staging:8080/?exit-provider=https://primary.gnosis-chain.rpc.hoprtech.net"
   destination:
     server: https://kubernetes.default.svc
     namespace: staging

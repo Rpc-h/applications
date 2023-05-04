@@ -1,10 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: discovery-platform-staging
+  name: discovery-platform
   namespace: argocd
 spec:
-  project: default
+  project: staging
   source:
     #TODO - do not hardcode
     repoURL: https://github.com/Rpc-h/helm-charts
@@ -20,14 +20,14 @@ spec:
             replicaCount: 3
             envFrom:
               - type: secret
-                name: discovery-platform-staging
+                name: discovery-platform
             service:
               name: "http"
             env:
               - name: "SKIP_CHECK_COMMITMENT"
                 value: "true"
               - name: "FUNDING_SERVICE_URL"
-                value: "http://funding-service-staging.staging:3010"
+                value: "http://funding-service.staging:3010"
               - name: "DEBUG"
                 value: "rpch*,-*metrics"
             ingress:

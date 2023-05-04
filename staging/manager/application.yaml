@@ -1,10 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: manager-staging
+  name: manager
   namespace: argocd
 spec:
-  project: default
+  project: staging
   source:
     #TODO - do not hardcode
     repoURL: https://github.com/Rpc-h/helm-charts
@@ -19,7 +19,7 @@ spec:
               tag: f8e2656
             envFrom:
               - type: secret
-                name: manager-staging
+                name: manager
             env:
               - name: "PORT"
                 value: "3030"
