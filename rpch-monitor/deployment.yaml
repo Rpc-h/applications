@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server:2969662
+          image: europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server:a89f27e
           env:
             - name: DEBUG
               value: rpch*,-*metrics
