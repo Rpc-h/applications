@@ -2,9 +2,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: hoprd-operator
-  namespace: argocd
+  namespace: staging-operator
 spec:
-  project: default
+  project: staging
   source:
     repoURL: https://github.com/hoprnet/hoprd-operator
     targetRevision: rpch
