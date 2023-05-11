@@ -2,9 +2,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: hoprd-operator
-  namespace: staging-operator
+  namespace: production-operator
 spec:
-  project: staging
+  project: production
   source:
     repoURL: https://github.com/hoprnet/hoprd-operator
     targetRevision: rpch
@@ -32,7 +32,7 @@ spec:
               ingress:
                 enabled: true
                 ingressClassName: traefik
-                hostname: admin.staging.hoprd.rpch.tech
+                hostname: admin.production.hoprd.rpch.tech
                 annotations:
                   traefik.ingress.kubernetes.io/router.entrypoints: websecure
                   traefik.ingress.kubernetes.io/router.middlewares: traefik-forward-auth@kubernetescrd
@@ -41,7 +41,7 @@ spec:
               enabled: true
   destination:
     server: https://kubernetes.default.svc
-    namespace: staging-operator
+    namespace: production-operator
   syncPolicy:
     automated:
       prune: true

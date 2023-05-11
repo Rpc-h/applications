@@ -1,0 +1,69 @@
+apiVersion: hoprnet.org/v1alpha
+kind: Hoprd
+metadata:
+  name: hoprd-node-19
+  namespace: production
+spec:
+  config:
+    autoRedeemTickets: true
+    announce: false
+  enabled: true
+  network: monte_rosa
+  ingress:
+    enabled: true
+  monitoring:
+    enabled: true
+  secret:
+    secretName: hoprd-node-19
+  deployment:
+    resources: |
+      limits:
+        cpu: 1000m
+        memory: 1.9Gi
+      requests:
+        cpu: 1000m
+        memory: 1.9Gi
+    startupProbe: |
+      exec:
+        command:
+          - sh
+          - '-c'
+          - >-
+            curl -s http://localhost:3001/api/v2/node/info -H
+            "X-Auth-Token: " | jq -r .connectivityStatus |
+            grep -qE "Green|Yellow"
+      initialDelaySeconds: 5
+      timeoutSeconds: 5
+      periodSeconds: 30
+      successThreshold: 1
+      failureThreshold: 60
+    livenessProbe: |
+      exec:
+        command:
+          - sh
+          - '-c'
+          - >-
+            curl -s http://localhost:3001/api/v2/node/info -H
+            "X-Auth-Token: " | jq -r .connectivityStatus |
+            grep -qE "Green|Yellow"
+      initialDelaySeconds: 5
+      timeoutSeconds: 5
+      periodSeconds: 10
+      successThreshold: 1
+      failureThreshold: 5
+    readinessProbe: |
+      exec:
+        command:
+          - sh
+          - '-c'
+          - >-
+            curl -s http://localhost:3001/api/v2/node/info -H
+            "X-Auth-Token: " | jq -r .connectivityStatus |
+            grep -qE "Green|Yellow"
+      initialDelaySeconds: 5
+      timeoutSeconds: 5
+      periodSeconds: 10
+      successThreshold: 1
+      failureThreshold: 5
+  version: "1682855128"
+

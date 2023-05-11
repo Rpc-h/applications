@@ -1,8 +1,8 @@
 apiVersion: hoprnet.org/v1alpha
 kind: Hoprd
 metadata:
-  name: hoprd-node-1
-  namespace: staging
+  name: hoprd-node-3
+  namespace: production
 spec:
   config:
     autoRedeemTickets: true
@@ -14,7 +14,7 @@ spec:
   monitoring:
     enabled: true
   secret:
-    secretName: hoprd-node-1
+    secretName: hoprd-node-3
   deployment:
     resources: |
       limits:
@@ -30,7 +30,7 @@ spec:
           - '-c'
           - >-
             curl -s http://localhost:3001/api/v2/node/info -H
-            "X-Auth-Token: $HOPRD_API_TOKEN" | jq -r .connectivityStatus |
+            "X-Auth-Token: " | jq -r .connectivityStatus |
             grep -qE "Green|Yellow"
       initialDelaySeconds: 5
       timeoutSeconds: 5
@@ -44,7 +44,7 @@ spec:
           - '-c'
           - >-
             curl -s http://localhost:3001/api/v2/node/info -H
-            "X-Auth-Token: $HOPRD_API_TOKEN" | jq -r .connectivityStatus |
+            "X-Auth-Token: " | jq -r .connectivityStatus |
             grep -qE "Green|Yellow"
       initialDelaySeconds: 5
       timeoutSeconds: 5
@@ -58,7 +58,7 @@ spec:
           - '-c'
           - >-
             curl -s http://localhost:3001/api/v2/node/info -H
-            "X-Auth-Token: $HOPRD_API_TOKEN" | jq -r .connectivityStatus |
+            "X-Auth-Token: " | jq -r .connectivityStatus |
             grep -qE "Green|Yellow"
       initialDelaySeconds: 5
       timeoutSeconds: 5
@@ -66,3 +66,4 @@ spec:
       successThreshold: 1
       failureThreshold: 5
   version: "1682855128"
+
