@@ -41,7 +41,7 @@ spec:
               enabled: true
   destination:
     server: https://kubernetes.default.svc
-    namespace: production-operator
+    namespace: hoprd-operator
   syncPolicy:
     automated:
       prune: true
