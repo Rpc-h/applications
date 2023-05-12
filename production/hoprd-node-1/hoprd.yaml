@@ -1,8 +1,8 @@
 apiVersion: hoprnet.org/v1alpha
 kind: Hoprd
 metadata:
-  name: hoprd-node-2
-  namespace: staging
+  name: hoprd-node-1
+  namespace: production
 spec:
   config:
     autoRedeemTickets: true
@@ -14,7 +14,7 @@ spec:
   monitoring:
     enabled: true
   secret:
-    secretName: hoprd-node-2
+    secretName: hoprd-node-1
   deployment:
     resources: |
       limits:
