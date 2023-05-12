@@ -4,7 +4,7 @@ metadata:
   name: hoprd-operator
   namespace: hoprd-operator
 spec:
-  project: production
+  project: hoprd-operator
   source:
     repoURL: https://github.com/hoprnet/hoprd-operator
     targetRevision: rpch
