@@ -1,0 +1,49 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: exit-node-13
+  namespace: production
+spec:
+  project: production
+  source:
+    repoURL: https://github.com/Rpc-h/helm-charts
+    targetRevision: main
+    path: exit-node
+    plugin:
+      env:
+        - name: HELM_VALUES
+          value: |
+            image:
+              repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/exit-node
+              tag: "2969662"
+            envFrom:
+              - type: secret
+                name: exit-node-13
+            env:
+              - name: "HOPRD_API_ENDPOINT"
+                value: "https://hoprd-node-13.production.hoprd.rpch.tech"
+              - name: "DEBUG"
+                value: "rpch*,-*metrics"
+              - name: "RPCH_IDENTITY_FILE"
+                value: "/mnt/identity/.rpch-identity"
+              - name: "RPCH_DATA_DIR"
+                value: "/mnt/data"
+            securityContext:
+              runAsUser: 0 #TODO - this is bad
+              runAsGroup: 0 #TODO - this is bad
+            ingress:
+              enabled: true
+              className: traefik
+              annotations:
+                traefik.ingress.kubernetes.io/router.entrypoints: websecure
+                cert-manager.io/cluster-issuer: production
+              hosts:
+                - host: exit-node-13.production.rpch.tech
+                  paths:
+                    - path: /
+                      pathType: ImplementationSpecific
+                      port: 3001
+              tls:
+                - secretName: exit-node-13.production.rpch.tech-tls
+                  hosts:
+                    - exit-node-13.production.rpch.tech
