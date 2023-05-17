@@ -49,6 +49,11 @@ spec:
                 env:
                   - name: "HOPRD_API_ENDPOINT"
                     value: "https://hoprd-node-{{id}}.production.hoprd.rpch.tech"
+                  - name: "HOPRD_API_TOKEN"
+                    valueFrom:
+                      secretKeyRef:
+                        name: hoprd-node-{{id}}
+                        key: HOPRD_API_TOKEN
                   - name: "DEBUG"
                     value: "rpch*,-*metrics"
                   - name: "RPCH_IDENTITY_FILE"
