@@ -36,7 +36,7 @@ spec:
       timeoutSeconds: 5
       periodSeconds: 30
       successThreshold: 1
-      failureThreshold: 60
+      failureThreshold: 240
     livenessProbe: |
       exec:
         command:

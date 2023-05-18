@@ -1,0 +1,18 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: exit-node-7
+  namespace: production
+spec:
+  encryptedData:
+    RPCH_PRIVATE_KEY: AgAyOU5beeUdFWMn0Pk3JVTq5ah5Xjq5Gr5GpoL3NYaXU7FGySH4yc6/mWQANw0QChKE/80GY6j/EiCfOzKbXv4cxl4MtEQXmJCZc1dQAEvpbJrFlxY4L+sZTR11FhL3KloXfBRIKWCmSmN+hpszaxz807pvOpWo16vPjJRReoAes34c7/kX6rmE/h4EG6Cfww5LXWz5PevgpOmc2Zbz4qtcgTF2G7KreyUQDEzW8+xzBKAUwn1tGqf3CPD/prBsHYLYUErBO/ujiYq/O4LFy0FLZjtIj9kXwDnuTEo4y4RWZ66C51ERWnU5cQGXs8F7MNj/feu1MhOXem8HNJ6ZMOwEGXIaDy4q4/ST9FrreJVcgyAVz7pfUhEwrA5PRZ0Nb4kaW6kQ2PnlTxirzgNI5IzDgmoQKSnGu6cg2S82WZzWdwzXmp7ulM/yKOhZ3DKXu5MzZy9Xj2KT/nrnVZjipRkjKiSas3pYksG57Xu6t6cIpznjD+5lbhNQTU8qp3QbGOqd6aifDmygMfuwwa3GlPMxqjTfH2S/YijSlRcMsoOMLb1UrvNKmoPUE8YwE+DaMIRPjYjsMzvMDauf1aOKmnkbTYuZFdHMV7DfY1Qtgw9A1xdC9eES0QdnbhQWdeq86Ty3NbAj61WjQLxKgU7L2lKZsxTaGImI/ZNJ9MzxoViuIgCbB6x2rmYGLleSF8yzjWyJGLGHMPoTSwMuVB3geW6+zuiE5bbCdjcjcafRKrqiPe8ovK2kZQgmihVAybds0vHfIDnuCMKYjG1AfLCvw0ZbJlk=
+  template:
+    metadata:
+      annotations:
+        address: 0xe8c43afD0A6E5296D3694de10b2d73563b3d6F7F
+        public-key: 0x02b1f22f6267af9e7c3047fc782089009eed043bef5c386814f0993db21dbe5a13
+      creationTimestamp: null
+      name: exit-node-7
+      namespace: production
+
