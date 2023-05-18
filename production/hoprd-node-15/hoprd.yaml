@@ -30,7 +30,7 @@ spec:
           - '-c'
           - >-
             curl -s http://localhost:3001/api/v2/node/info -H
-            "X-Auth-Token: " | jq -r .connectivityStatus |
+            "X-Auth-Token: $HOPRD_API_TOKEN" | jq -r .connectivityStatus |
             grep -qE "Green|Yellow"
       initialDelaySeconds: 5
       timeoutSeconds: 5
@@ -44,7 +44,7 @@ spec:
           - '-c'
           - >-
             curl -s http://localhost:3001/api/v2/node/info -H
-            "X-Auth-Token: " | jq -r .connectivityStatus |
+            "X-Auth-Token: $HOPRD_API_TOKEN" | jq -r .connectivityStatus |
             grep -qE "Green|Yellow"
       initialDelaySeconds: 5
       timeoutSeconds: 5
@@ -58,7 +58,7 @@ spec:
           - '-c'
           - >-
             curl -s http://localhost:3001/api/v2/node/info -H
-            "X-Auth-Token: " | jq -r .connectivityStatus |
+            "X-Auth-Token: $HOPRD_API_TOKEN" | jq -r .connectivityStatus |
             grep -qE "Green|Yellow"
       initialDelaySeconds: 5
       timeoutSeconds: 5
