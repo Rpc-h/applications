@@ -36,47 +36,49 @@ spec:
         repoURL: https://github.com/Rpc-h/helm-charts
         targetRevision: main
         path: exit-node
-        helm:
-          values: |
-            image:
-              repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/exit-node
-              tag: "2969662"
-            envFrom:
-              - type: secret
-                name: exit-node-{{id}}
-            env:
-              - name: "HOPRD_API_ENDPOINT"
-                value: "https://hoprd-node-{{id}}.production.hoprd.rpch.tech"
-              - name: "HOPRD_API_TOKEN"
-                valueFrom:
-                  secretKeyRef:
-                    name: hoprd-node-{{id}}
-                    key: HOPRD_API_TOKEN
-              - name: "DEBUG"
-                value: "rpch*,-*metrics"
-              - name: "RPCH_IDENTITY_FILE"
-                value: "/mnt/identity/.rpch-identity"
-              - name: "RPCH_DATA_DIR"
-                value: "/mnt/data"
-            securityContext:
-              runAsUser: 0 #TODO - this is bad
-              runAsGroup: 0 #TODO - this is bad
-            ingress:
-              enabled: true
-              className: traefik
-              annotations:
-                traefik.ingress.kubernetes.io/router.entrypoints: websecure
-                cert-manager.io/cluster-issuer: production
-              hosts:
-                - host: exit-node-{{id}}.production.rpch.tech
-                  paths:
-                    - path: /
-                      pathType: ImplementationSpecific
-                      port: 3001
-              tls:
-                - secretName: exit-node-{{id}}.production.rpch.tech-tls
+        plugin:
+          env:
+            - name: HELM_VALUES
+              value: |
+                image:
+                  repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/exit-node
+                  tag: "2969662"
+                envFrom:
+                  - type: secret
+                    name: exit-node-{{id}}
+                env:
+                  - name: "HOPRD_API_ENDPOINT"
+                    value: "https://hoprd-node-{{id}}.production.hoprd.rpch.tech"
+                  - name: "HOPRD_API_TOKEN"
+                    valueFrom:
+                      secretKeyRef:
+                        name: hoprd-node-{{id}}
+                        key: HOPRD_API_TOKEN
+                  - name: "DEBUG"
+                    value: "rpch*,-*metrics"
+                  - name: "RPCH_IDENTITY_FILE"
+                    value: "/mnt/identity/.rpch-identity"
+                  - name: "RPCH_DATA_DIR"
+                    value: "/mnt/data"
+                securityContext:
+                  runAsUser: 0 #TODO - this is bad
+                  runAsGroup: 0 #TODO - this is bad
+                ingress:
+                  enabled: true
+                  className: traefik
+                  annotations:
+                    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+                    cert-manager.io/cluster-issuer: production
                   hosts:
-                    - exit-node-{{id}}.production.rpch.tech
+                    - host: exit-node-{{id}}.production.rpch.tech
+                      paths:
+                        - path: /
+                          pathType: ImplementationSpecific
+                          port: 3001
+                  tls:
+                    - secretName: exit-node-{{id}}.production.rpch.tech-tls
+                      hosts:
+                        - exit-node-{{id}}.production.rpch.tech
       destination:
         server: https://kubernetes.default.svc
         namespace: production
