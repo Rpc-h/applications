@@ -44,7 +44,7 @@ spec:
               tls:
                 - secretName: discovery.production.rpch.tech-tls
                   hosts:
-                    - discovery.rpch.tech
+                    - discovery.production.rpch.tech
   destination:
     server: https://kubernetes.default.svc
     namespace: production
