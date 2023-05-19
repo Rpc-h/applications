@@ -1,0 +1,58 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: discovery-platform
+  namespace: production
+spec:
+  project: production
+  source:
+    #TODO - do not hardcode
+    repoURL: https://github.com/Rpc-h/helm-charts
+    targetRevision: main
+    path: discovery-platform
+    plugin:
+      env:
+        - name: HELM_VALUES
+          value: |
+            image:
+              repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/discovery-platform
+              tag: "d8a4fec"
+            replicaCount: 3
+            envFrom:
+              - type: secret
+                name: discovery-platform
+            service:
+              name: "http"
+            env:
+              - name: "SKIP_CHECK_COMMITMENT"
+                value: "true"
+              - name: "FUNDING_SERVICE_URL"
+                value: "http://production-funding-service.production:3010"
+              - name: "DEBUG"
+                value: "rpch*,-*metrics"
+            ingress:
+              enabled: true
+              className: traefik
+              annotations:
+                cert-manager.io/cluster-issuer: production
+                traefik.ingress.kubernetes.io/router.middlewares: traefik-rate-limiting@kubernetescrd
+              hosts:
+                - host: discovery.production.rpch.tech
+                  paths:
+                    - path: /
+                      pathType: ImplementationSpecific
+              tls:
+                - secretName: discovery.production.rpch.tech-tls
+                  hosts:
+                    - discovery.rpch.tech
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: production
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: true
+    syncOptions:
+      - CreateNamespace=true
+      - PruneLast=true
