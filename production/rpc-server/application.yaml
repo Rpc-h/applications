@@ -31,7 +31,7 @@ spec:
                 value: "app"
               - name: "CLIENT"
                 value: "trial" #I manually created the client in the DB...
-            
+
   destination:
     server: https://kubernetes.default.svc
     namespace: production
