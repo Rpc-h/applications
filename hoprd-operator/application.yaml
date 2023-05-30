@@ -18,8 +18,8 @@ spec:
                 size: 50Mi
                 storageClassName: standard
               image:
-                tag: latest
-                pullPolicy: Always
+                tag: 0.1.23
+                pullPolicy: IfNotPresent
               secretName: hoprd-operator
               ingress:
                 ingressClassName: traefik
