@@ -19,7 +19,7 @@ spec:
                 storageClassName: standard
               image:
                 tag: 0.1.23
-                pullPolicy: IfNotPresent
+                pullPolicy: Always
               secretName: hoprd-operator
               ingress:
                 ingressClassName: traefik
