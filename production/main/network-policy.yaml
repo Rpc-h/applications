@@ -9,20 +9,8 @@ spec:
       app.kubernetes.io/name: hoprd
   policyTypes:
     - Ingress
-    - Egress
   ingress:
     - from:
-        - namespaceSelector:
-            matchLabels:
-              kubernetes.io/metadata.name: production
-        - podSelector:
-            matchLabels:
-              app.kubernetes.io/name: hoprd
-      ports:
-        - protocol: TCP
-          port: 3001
-  egress:
-    - to:
         - namespaceSelector:
             matchLabels:
               kubernetes.io/metadata.name: production
