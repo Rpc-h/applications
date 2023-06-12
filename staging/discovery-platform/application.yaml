@@ -16,7 +16,7 @@ spec:
           value: |
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/discovery-platform
-              tag: "d8a4fec"
+              tag: "7f17f20"
             replicaCount: 3
             envFrom:
               - type: secret
@@ -28,8 +28,10 @@ spec:
                 value: "true"
               - name: "FUNDING_SERVICE_URL"
                 value: "http://staging-funding-service.staging:3010"
+              - name: "AVAILABILITY_MONITOR_URL"
+                value: "http://staging-availability-monitor.staging:3050"
               - name: "DEBUG"
-                value: "rpch*,-*metrics"
+                value: "rpch*"
             ingress:
               enabled: true
               className: traefik
