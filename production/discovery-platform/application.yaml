@@ -29,7 +29,7 @@ spec:
               - name: "FUNDING_SERVICE_URL"
                 value: "http://production-funding-service.production:3010"
               - name: "DEBUG"
-                value: "rpch*,-*metrics"
+                value: "rpch*"
             ingress:
               enabled: true
               className: traefik

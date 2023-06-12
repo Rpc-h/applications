@@ -20,12 +20,12 @@ spec:
     spec:
       containers:
         - name: server
-          image: europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server:2969662
+          image: europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server:7f17f20
           env:
             - name: DEBUG
               value: rpch*,-*metrics
             - name: RESPONSE_TIMEOUT
-              value: "20000"
+              value: "5000"
             - name: DISCOVERY_PLATFORM_API_ENDPOINT
               value: https://staging.discovery.rpch.tech
             - name: PORT

@@ -17,12 +17,12 @@ spec:
               port: 8080
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server
-              tag: "4f79b24"
+              tag: "7f17f20"
             env:
               - name: "DEBUG"
-                value: "rpch*,-*metrics"
+                value: "rpch*"
               - name: "RESPONSE_TIMEOUT"
-                value: "20000"
+                value: "5000"
               - name: "DISCOVERY_PLATFORM_API_ENDPOINT"
                 value: "http://production-discovery-platform.production:3020"
               - name: "PORT"
@@ -31,7 +31,7 @@ spec:
                 value: "app"
               - name: "CLIENT"
                 value: "trial" #I manually created the client in the DB...
-            
+
   destination:
     server: https://kubernetes.default.svc
     namespace: production

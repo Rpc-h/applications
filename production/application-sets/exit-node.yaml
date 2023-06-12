@@ -29,7 +29,7 @@ spec:
           - id: "20"
   template:
     metadata:
-      name: 'exit-node-{{id}}'
+      name: "exit-node-{{id}}"
     spec:
       project: production
       source:
@@ -42,7 +42,7 @@ spec:
               value: |
                 image:
                   repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/exit-node
-                  tag: "2969662"
+                  tag: "7f17f20"
                 envFrom:
                   - type: secret
                     name: exit-node-{{id}}
@@ -52,7 +52,7 @@ spec:
                   - name: "HOPRD_API_ENDPOINT"
                     value: "https://hoprd-node-{{id}}.production.hoprd.rpch.tech"
                   - name: "DEBUG"
-                    value: "rpch*,-*metrics"
+                    value: "rpch*"
                   - name: "RPCH_IDENTITY_FILE"
                     value: "/mnt/identity/.rpch-identity"
                   - name: "RPCH_DATA_DIR"
