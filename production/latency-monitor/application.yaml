@@ -17,7 +17,7 @@ spec:
               port: 1234
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/latency-monitor
-              tag: "79850b2"
+              tag: "e087a19"
             env:
               - name: "MONITOR_LOG_LEVEL"
                 value: "0"

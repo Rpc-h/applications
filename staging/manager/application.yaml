@@ -16,7 +16,7 @@ spec:
           value: |
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/manager
-              tag: "79850b2"
+              tag: "e087a19"
             envFrom:
               - type: secret
                 name: manager
