@@ -42,7 +42,7 @@ spec:
               value: |
                 image:
                   repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/exit-node
-                  tag: "e087a19"
+                  tag: "139f574"
                 envFrom:
                   - type: secret
                     name: exit-node-{{id}}
