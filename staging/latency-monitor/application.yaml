@@ -13,6 +13,13 @@ spec:
       env:
         - name: HELM_VALUES
           value: |
+            resources:
+              requests:
+                cpu: 2000m
+                memory: 256Mi
+              limits:
+                cpu: 2000m
+                memory: 256Mi
             service:
               port: 1234
             image:
