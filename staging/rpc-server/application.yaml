@@ -17,14 +17,14 @@ spec:
               port: 8080
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server
-              tag: "49060e6"
+              tag: "6525e7f"
             env:
               - name: "DEBUG"
                 value: "rpch*"
               - name: "RESPONSE_TIMEOUT"
                 value: "10000"
               - name: "DISCOVERY_PLATFORM_API_ENDPOINT"
-                value: "https://staging.discovery.rpch.tech"
+                value: "http://staging-discovery-platform.staging:3020"
               - name: "PORT"
                 value: "8080"
               - name: "DATA_DIR"
