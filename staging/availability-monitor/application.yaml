@@ -16,7 +16,7 @@ spec:
           value: |
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/availability-monitor
-              tag: "b808e67"
+              tag: "6b9862f"
             replicaCount: 1
             envFrom:
               - type: secret
