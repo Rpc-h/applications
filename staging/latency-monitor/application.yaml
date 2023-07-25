@@ -15,16 +15,16 @@ spec:
           value: |
             resources:
               requests:
-                cpu: 100m
-                memory: 64Mi
+                cpu: 200m
+                memory: 128Mi
               limits:
-                cpu: 100m
-                memory: 64Mi
+                cpu: 200m
+                memory: 128Mi
             service:
               port: 1234
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/latency-monitor
-              tag: "e50a3eb"
+              tag: "898d04b"
             env:
               - name: "MONITOR_LOG_LEVEL"
                 value: "0"
