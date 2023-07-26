@@ -41,6 +41,10 @@ spec:
                   paths:
                     - path: /
                       pathType: ImplementationSpecific
+                - host: discovery.rpch.tech
+                  paths:
+                    - path: /
+                      pathType: ImplementationSpecific
               tls:
                 - secretName: production.discovery.rpch.tech-tls
                   hosts:
