@@ -31,7 +31,7 @@ spec:
               - name: "MONITOR_METRICS_REQUEST_INTERVAL"
                 value: "1"
               - name: "MONITOR_RPC_SERVER_ADDRESS"
-                value: "http://staging-rpc-server.staging:8080/?exit-provider=https://primary.gnosis-chain.rpc.hoprtech.net"
+                value: "http://staging-rpc-server.staging:8080"
   destination:
     server: https://kubernetes.default.svc
     namespace: staging
