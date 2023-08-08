@@ -24,7 +24,8 @@ spec:
               port: 8080
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server
-              tag: "sha256:c8e46794d83386713c4afb2035591436ce4cbd2647d77e708ab6eeab0bdd1b56"
+              tag: "latest"
+              pullPolicy: "always"
             env:
               - name: "DEBUG"
                 value: "rpch*"
