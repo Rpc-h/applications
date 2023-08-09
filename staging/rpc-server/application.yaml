@@ -25,6 +25,7 @@ spec:
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server
               tag: "f6cf5f4"
+            replicaCount: 0
             env:
               - name: "DEBUG"
                 value: "rpch*"

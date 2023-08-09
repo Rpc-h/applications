@@ -17,7 +17,7 @@ spec:
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/discovery-platform
               tag: "latest"
-            replicaCount: 3
+            replicaCount: 1
             envFrom:
               - type: secret
                 name: discovery-platform
