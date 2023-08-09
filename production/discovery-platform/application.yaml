@@ -17,7 +17,7 @@ spec:
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/discovery-platform
               tag: "latest"
-              pullPolicy: "always"
+              pullPolicy: "Always"
             replicaCount: 3
             envFrom:
               - type: secret
