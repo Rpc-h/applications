@@ -16,7 +16,7 @@ spec:
           value: |
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/manager
-              tag: "1d6446d"
+              tag: "1fbcb59"
             replicaCount: 1
             envFrom:
               - type: secret
