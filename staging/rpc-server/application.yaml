@@ -24,7 +24,7 @@ spec:
               port: 8080
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server
-              tag: "c94ceb7"
+              tag: "1396385"
             replicaCount: 1
             env:
               - name: "DEBUG"
