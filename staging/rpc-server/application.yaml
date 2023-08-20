@@ -30,7 +30,7 @@ spec:
               - name: "DEBUG"
                 value: "rpch*"
               - name: "RESPONSE_TIMEOUT"
-                value: "30000"
+                value: "60000"
               - name: "DISCOVERY_PLATFORM_API_ENDPOINT"
                 value: "http://staging-discovery-platform.staging:3020"
               - name: "PORT"
