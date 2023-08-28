@@ -16,8 +16,8 @@ spec:
           value: |
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/availability-monitor
-              tag: "68a40e7"
-            replicaCount: 0
+              tag: "c25574e"
+            replicaCount: 1
             envFrom:
               - type: secret
                 name: availability-monitor
@@ -25,7 +25,7 @@ spec:
               name: "http"
             env:
               - name: "DEBUG"
-                value: "rpch*"
+                value: "rpch:availability-monitor*"
   destination:
     server: https://kubernetes.default.svc
     namespace: production
