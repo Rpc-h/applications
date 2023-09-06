@@ -38,7 +38,7 @@ spec:
               - name: "DATA_DIR"
                 value: "app"
               - name: "CLIENT"
-                value: "who-drink-soil-medicine-thumb"
+                value: "who-dri6k-soil-medicine-thumb"
   destination:
     server: https://kubernetes.default.svc
     namespace: staging
