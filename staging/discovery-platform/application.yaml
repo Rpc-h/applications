@@ -31,6 +31,8 @@ spec:
                 value: "http://staging-funding-service.staging:3010"
               - name: "AVAILABILITY_MONITOR_URL"
                 value: "http://staging-availability-monitor.staging:3050"
+              - name: "PORT"
+                value: "3020"
               - name: "DEBUG"
                 value: "rpch*"
             ingress:
