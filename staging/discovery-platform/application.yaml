@@ -42,14 +42,14 @@ spec:
                 cert-manager.io/cluster-issuer: production
                 traefik.ingress.kubernetes.io/router.middlewares: traefik-rate-limiting@kubernetescrd
               hosts:
-                - host: staging.discovery.rpch.tech
+                - host: discovery.staging.rpch.tech
                   paths:
                     - path: /
                       pathType: ImplementationSpecific
               tls:
-                - secretName: staging.discovery.rpch.tech-tls
+                - secretName: discovery.staging.rpch.tech-tls
                   hosts:
-                    - staging.discovery.rpch.tech
+                    - discovery.staging.rpch.tech
   destination:
     server: https://kubernetes.default.svc
     namespace: staging
