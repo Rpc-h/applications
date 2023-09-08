@@ -16,7 +16,7 @@ spec:
           value: |
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/discovery-platform
-              tag: "latest"
+              tag: "036d3ca"
               pullPolicy: "Always"
             replicaCount: 1
             envFrom:
@@ -35,6 +35,8 @@ spec:
                 value: "3020"
               - name: "DEBUG"
                 value: "rpch*"
+              - name: "SESSION_SECRET"
+                value: "need-to-change-and-set-as-secret"
             ingress:
               enabled: true
               className: traefik
