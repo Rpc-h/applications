@@ -26,7 +26,7 @@ spec:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server@sha256
               tag: "987fd899fc0e1184691dd6724dd7f7c8ec918f66325f59a4eadfd9f4b7399eb1"
               pullPolicy: "IfNotPresent"
-            replicaCount: 1
+            replicaCount: 0
             env:
               - name: "DEBUG"
                 value: "rpch*"
