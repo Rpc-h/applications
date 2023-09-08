@@ -18,7 +18,7 @@ spec:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/availability-monitor
               tag: "0.3.1"
               pullPolicy: "Always"
-            replicaCount: 0
+            replicaCount: 1
             envFrom:
               - type: secret
                 name: availability-monitor
