@@ -16,7 +16,7 @@ spec:
           value: |
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/discovery-platform
-              tag: "61ca3ab"
+              tag: "a4a877b"
               pullPolicy: "Always"
             replicaCount: 1
             envFrom:
@@ -25,18 +25,12 @@ spec:
             service:
               name: "http"
             env:
-              - name: "SKIP_CHECK_COMMITMENT"
-                value: "true"
-              - name: "FUNDING_SERVICE_URL"
-                value: "http://staging-funding-service.staging:3010"
-              - name: "AVAILABILITY_MONITOR_URL"
-                value: "http://staging-availability-monitor.staging:3050"
               - name: "PORT"
                 value: "3020"
               - name: "DEBUG"
                 value: "rpch*"
-              - name: "SESSION_SECRET"
-                value: "need-to-change-and-set-as-secret"
+              - name: "URL"
+                value: "https://discovery.staging.rpch.tech"
             ingress:
               enabled: true
               className: traefik
