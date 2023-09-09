@@ -27,20 +27,20 @@ spec:
               tag: "987fd899fc0e1184691dd6724dd7f7c8ec918f66325f59a4eadfd9f4b7399eb1"
               pullPolicy: "IfNotPresent"
             replicaCount: 0
+            envFrom:
+              - type: secret
+                name: rpc-server
             env:
               - name: "DEBUG"
                 value: "rpch*"
               - name: "RESPONSE_TIMEOUT"
-                value: "60000"
+                value: "10000"
               - name: "DISCOVERY_PLATFORM_API_ENDPOINT"
                 value: "http://production-discovery-platform.production:3020"
               - name: "PORT"
                 value: "8080"
               - name: "DATA_DIR"
                 value: "app"
-              - name: "CLIENT"
-                value: "trial" #I manually created the client in the DB...
-
   destination:
     server: https://kubernetes.default.svc
     namespace: production

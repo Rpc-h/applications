@@ -27,6 +27,9 @@ spec:
               tag: "0698001"
               pullPolicy: "Always"
             replicaCount: 1
+            envFrom:
+              - type: secret
+                name: rpc-server
             env:
               - name: "DEBUG"
                 value: "rpch*"
@@ -38,8 +41,6 @@ spec:
                 value: "8080"
               - name: "DATA_DIR"
                 value: "app"
-              - name: "CLIENT"
-                value: "who-dri6k-soil-medicine-thumb"
   destination:
     server: https://kubernetes.default.svc
     namespace: staging
