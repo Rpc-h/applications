@@ -23,10 +23,10 @@ spec:
             service:
               port: 8080
             image:
-              repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server@sha256
-              tag: "987fd899fc0e1184691dd6724dd7f7c8ec918f66325f59a4eadfd9f4b7399eb1"
-              pullPolicy: "IfNotPresent"
-            replicaCount: 0
+              repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server
+              tag: "0698001"
+              pullPolicy: "Always"
+            replicaCount: 1
             envFrom:
               - type: secret
                 name: rpc-server
