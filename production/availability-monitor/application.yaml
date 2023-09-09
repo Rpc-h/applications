@@ -16,7 +16,7 @@ spec:
           value: |
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/availability-monitor
-              tag: "0.3.1"
+              tag: "0.4.0"
               pullPolicy: "Always"
             replicaCount: 1
             envFrom:
@@ -25,6 +25,8 @@ spec:
             service:
               name: "http"
             env:
+              - name: "PORT"
+                value: 3050
               - name: "DEBUG"
                 value: "rpch:availability-monitor*"
   destination:
