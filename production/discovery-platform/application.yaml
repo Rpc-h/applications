@@ -16,23 +16,21 @@ spec:
           value: |
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/discovery-platform
-              tag: "latest"
+              tag: "0.5.0"
               pullPolicy: "Always"
-            replicaCount: 0
+            replicaCount: 1
             envFrom:
               - type: secret
                 name: discovery-platform
             service:
               name: "http"
             env:
-              - name: "SKIP_CHECK_COMMITMENT"
-                value: "true"
-              - name: "FUNDING_SERVICE_URL"
-                value: "http://production-funding-service.production:3010"
-              - name: "AVAILABILITY_MONITOR_URL"
-                value: "http://production-availability-monitor.staging:3050"
+              - name: "PORT"
+                value: "3020"
               - name: "DEBUG"
                 value: "rpch*"
+              - name: "URL"
+                value: "https://discovery.rpch.tech"
             ingress:
               enabled: true
               className: traefik
