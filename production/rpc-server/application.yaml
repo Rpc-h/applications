@@ -28,8 +28,8 @@ spec:
               pullPolicy: "Always"
             replicaCount: 1
             envFrom:
-              - type: secret
-                name: rpc-server
+              - secretRef:
+                  name: rpc-server
             env:
               - name: "DEBUG"
                 value: "rpch*"
