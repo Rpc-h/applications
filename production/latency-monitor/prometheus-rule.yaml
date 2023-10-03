@@ -10,13 +10,13 @@ spec:
         - alert: LatencyMonitorHighLatency
           annotations:
             description: >-
-              10% of all successful RPCh request latencies (quantile Q90%) have been above 1 second for 10 minutes.
+              10% of all successful RPCh request latencies (quantile Q90%) have been above 1.5 second for 10 minutes.
             summary: Latencies are very high.
-          expr: rpch_latencies_success{quantile="0.9"} > 1
+          expr: rpch_latencies_success{quantile="0.9"} > 1.5
           for: 10m
           labels:
-            channels: telegram
             severity: warning
+            environment: production
         - alert: LatencyMonitorHighFailureCount
           annotations:
             description: >-
@@ -25,5 +25,5 @@ spec:
           expr: increase(rpch_latencies_failure_count[60s]) > 10
           for: 3m
           labels:
-            channels: telegram
-            severity: warning
+            severity: critical
+            environment: production
