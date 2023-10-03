@@ -19,10 +19,9 @@ spec:
             environment: production
         - alert: LatencyMonitorHighFailureCount
           annotations:
-            description: >-
-              Failed RPCh latency request count has been more than 10 for 3 minutes.
+            description: RPCh latency monitor identified {{ $value | humanize }} failures for 3 minutes.
             summary: Failed latency request count is very high.
-          expr: increase(rpch_latencies_failure_count[60s]) > 10
+          expr: increase(rpch_latencies_failure_count{namespace="production"}[1m]) > 10
           for: 3m
           labels:
             severity: critical
