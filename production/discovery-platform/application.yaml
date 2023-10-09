@@ -16,7 +16,7 @@ spec:
           value: |
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/discovery-platform
-              tag: "0.10.0"
+              tag: "0.10.1"
               pullPolicy: "Always"
             replicaCount: 1
             envFrom:
