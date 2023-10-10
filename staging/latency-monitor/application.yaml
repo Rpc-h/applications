@@ -24,15 +24,15 @@ spec:
               port: 1234
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/latency-monitor
-              tag: "08645ed"
+              tag: "<todo>"
             replicaCount: 1
             env:
               - name: "MONITOR_LOG_LEVEL"
                 value: "0"
-              - name: "MONITOR_METRICS_REQUEST_INTERVAL"
-                value: "1"
               - name: "MONITOR_RPC_SERVER_ADDRESS"
                 value: "http://staging-rpc-server.staging:8080"
+              - name: "MONITOR_RPC_SERVER_ADDRESS_ZERO_HOP"
+                value: "http://staging-rpc-server.staging:8081"
   destination:
     server: https://kubernetes.default.svc
     namespace: staging
