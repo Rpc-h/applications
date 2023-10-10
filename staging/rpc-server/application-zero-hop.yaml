@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: rpc-server-one-hop
+  name: rpc-server-zero-hop
   namespace: staging
 spec:
   project: staging
@@ -41,6 +41,8 @@ spec:
                 value: "8080"
               - name: "DATA_DIR"
                 value: "app"
+              - name: FORCE_ZERO_HOP
+                value: true
   destination:
     server: https://kubernetes.default.svc
     namespace: staging
