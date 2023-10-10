@@ -29,6 +29,10 @@ spec:
             env:
               - name: "MONITOR_LOG_LEVEL"
                 value: "0"
+              - name: "MONITOR_METRICS_ADDRESS"
+                value: "0.0.0.0:1234"
+              - name: "MONITOR_METRICS_PATH"
+                value: "/metrics"
               - name: "MONITOR_RPC_SERVER_ADDRESS"
                 value: "http://staging-rpc-server-one-hop.staging:8080"
               - name: "MONITOR_RPC_SERVER_ADDRESS_ZERO_HOP"
