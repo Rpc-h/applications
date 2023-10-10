@@ -41,6 +41,8 @@ spec:
                 value: "8080"
               - name: "DATA_DIR"
                 value: "app"
+              - name: "FORCE_ZERO_HOP"
+                value: "true"
   destination:
     server: https://kubernetes.default.svc
     namespace: production
