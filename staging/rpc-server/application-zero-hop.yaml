@@ -21,7 +21,7 @@ spec:
                 cpu: 1000m
                 memory: 512Mi
             service:
-              port: 8080
+              port: 8081
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server
               tag: "0.6.3"
