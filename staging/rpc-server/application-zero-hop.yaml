@@ -38,7 +38,7 @@ spec:
               - name: "DISCOVERY_PLATFORM_API_ENDPOINT"
                 value: "http://staging-discovery-platform.staging:3020"
               - name: "PORT"
-                value: "8080"
+                value: "8081"
               - name: "DATA_DIR"
                 value: "app"
               - name: "FORCE_ZERO_HOP"
