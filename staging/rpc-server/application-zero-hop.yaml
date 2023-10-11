@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: rpc-server-one-hop
+  name: rpc-server-zero-hop
   namespace: staging
 spec:
   project: staging
@@ -21,7 +21,7 @@ spec:
                 cpu: 1000m
                 memory: 512Mi
             service:
-              port: 8080
+              port: 8081
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server
               tag: "0.6.3"
@@ -38,9 +38,11 @@ spec:
               - name: "DISCOVERY_PLATFORM_API_ENDPOINT"
                 value: "http://staging-discovery-platform.staging:3020"
               - name: "PORT"
-                value: "8080"
+                value: "8081"
               - name: "DATA_DIR"
                 value: "app"
+              - name: "FORCE_ZERO_HOP"
+                value: true
   destination:
     server: https://kubernetes.default.svc
     namespace: staging
