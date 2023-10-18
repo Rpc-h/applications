@@ -24,7 +24,7 @@ spec:
               port: 8081
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server
-              tag: "0.6.3"
+              tag: "0.7.0"
               pullPolicy: "Always"
             replicaCount: 1
             envFrom:
