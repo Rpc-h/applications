@@ -21,8 +21,8 @@ spec:
           annotations:
             description: RPCh latency monitor identified {{ $value | humanize }} failures for 3 minutes.
             summary: Failed latency request count is very high.
-          expr: increase(rpch_latencies_failure_count{namespace="staging"}[1m]) > 10
-          for: 3m
+          expr: increase(rpch_latencies_failure_count{namespace="staging"}[30m]) > 1500
+          for: 30m
           labels:
             severity: critical
             environment: staging
