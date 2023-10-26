@@ -32,7 +32,7 @@ spec:
               - name: "MONITOR_METRICS_REQUEST_INTERVAL"
                 value: "1"
               - name: "MONITOR_RPC_SERVER_ADDRESS"
-                value: "http://production-rpc-server.production:8080"
+                value: "http://production-rpc-server.production:45750"
   destination:
     server: https://kubernetes.default.svc
     namespace: production
