@@ -34,9 +34,9 @@ spec:
               - name: "MONITOR_METRICS_PATH"
                 value: "/metrics"
               - name: "MONITOR_RPC_SERVER_ADDRESS"
-                value: "http://staging-rpc-server-one-hop.staging:8080"
+                value: "http://staging-rpc-server-one-hop.staging:45750"
               - name: "MONITOR_RPC_SERVER_ADDRESS_ZERO_HOP"
-                value: "http://staging-rpc-server-zero-hop.staging:8081"
+                value: "http://staging-rpc-server-zero-hop.staging:45750"
   destination:
     server: https://kubernetes.default.svc
     namespace: staging

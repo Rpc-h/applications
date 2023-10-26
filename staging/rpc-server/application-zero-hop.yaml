@@ -21,7 +21,7 @@ spec:
                 cpu: 1000m
                 memory: 512Mi
             service:
-              port: 8081
+              port: 45750
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server
               tag: "0.9.1"
@@ -37,8 +37,6 @@ spec:
                 value: "10000"
               - name: "DISCOVERY_PLATFORM_API_ENDPOINT"
                 value: "http://staging-discovery-platform.staging:3020"
-              - name: "PORT"
-                value: "8081"
               - name: "FORCE_ZERO_HOP"
                 value: true
   destination:
