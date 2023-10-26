@@ -24,7 +24,7 @@ spec:
               port: 8081
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server
-              tag: "0.9.0"
+              tag: "0.9.1"
               pullPolicy: "Always"
             replicaCount: 1
             envFrom:
@@ -39,8 +39,6 @@ spec:
                 value: "http://staging-discovery-platform.staging:3020"
               - name: "PORT"
                 value: "8081"
-              - name: "DATA_DIR"
-                value: "app"
               - name: "FORCE_ZERO_HOP"
                 value: true
   destination:
