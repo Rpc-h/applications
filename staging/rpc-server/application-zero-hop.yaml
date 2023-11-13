@@ -24,7 +24,7 @@ spec:
               port: 45750
             image:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server
-              tag: "0.11.4"
+              tag: "0.11.5"
               pullPolicy: "Always"
             replicaCount: 0
             envFrom:
