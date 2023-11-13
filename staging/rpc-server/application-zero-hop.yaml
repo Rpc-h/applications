@@ -26,7 +26,7 @@ spec:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server
               tag: "0.11.3"
               pullPolicy: "Always"
-            replicaCount: 1
+            replicaCount: 0
             envFrom:
               - secretRef:
                   name: rpc-server
