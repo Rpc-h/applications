@@ -26,7 +26,7 @@ spec:
               repository: europe-west6-docker.pkg.dev/rpch-375921/rpch/rpc-server
               tag: "0.11.5"
               pullPolicy: "Always"
-            replicaCount: 0
+            replicaCount: 1
             envFrom:
               - secretRef:
                   name: rpc-server
@@ -34,7 +34,7 @@ spec:
               - name: "DEBUG"
                 value: "rpch*"
               - name: "RESPONSE_TIMEOUT"
-                value: 90000
+                value: 60000
               - name: "DISCOVERY_PLATFORM_API_ENDPOINT"
                 value: "http://staging-discovery-platform.staging:3020"
   destination:
