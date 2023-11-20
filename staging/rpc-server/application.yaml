@@ -37,6 +37,21 @@ spec:
                 value: 60000
               - name: "DISCOVERY_PLATFORM_API_ENDPOINT"
                 value: "http://staging-discovery-platform.staging:3020"
+            ingress:
+              enabled: true
+              className: traefik
+              annotations:
+                cert-manager.io/cluster-issuer: production
+                traefik.ingress.kubernetes.io/router.middlewares: traefik-rate-limiting@kubernetescrd
+              hosts:
+                - host: rpc-server-one-hop.staging.rpch.tech
+                  paths:
+                    - path: /
+                      pathType: ImplementationSpecific
+              tls:
+                - secretName: rpc-server-one-hop.staging.rpch.tech-tls
+                  hosts:
+                    - rpc-server-one-hop.staging.rpch.tech
   destination:
     server: https://kubernetes.default.svc
     namespace: staging

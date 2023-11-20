@@ -39,6 +39,21 @@ spec:
                 value: "http://staging-discovery-platform.staging:3020"
               - name: "FORCE_ZERO_HOP"
                 value: true
+            ingress:
+              enabled: true
+              className: traefik
+              annotations:
+                cert-manager.io/cluster-issuer: production
+                traefik.ingress.kubernetes.io/router.middlewares: traefik-rate-limiting@kubernetescrd
+              hosts:
+                - host: rpc-server-zero-hop.staging.rpch.tech
+                  paths:
+                    - path: /
+                      pathType: ImplementationSpecific
+              tls:
+                - secretName: rpc-server-zero-hop.staging.rpch.tech-tls
+                  hosts:
+                    - rpc-server-zero-hop.staging.rpch.tech
   destination:
     server: https://kubernetes.default.svc
     namespace: staging
