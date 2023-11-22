@@ -38,7 +38,7 @@ spec:
                 cert-manager.io/cluster-issuer: production
                 traefik.ingress.kubernetes.io/router.middlewares: traefik-rate-limiting@kubernetescrd
               hosts:
-                - host: production.discovery.rpch.tech
+                - host: discovery.production.rpch.tech
                   paths:
                     - path: /
                       pathType: ImplementationSpecific
@@ -47,9 +47,9 @@ spec:
                     - path: /
                       pathType: ImplementationSpecific
               tls:
-                - secretName: production.discovery.rpch.tech-tls
+                - secretName: discovery.production.rpch.tech-tls
                   hosts:
-                    - production.discovery.rpch.tech
+                    - discovery.production.rpch.tech
                 - secretName: discovery.rpch.tech-tls
                   hosts:
                     - discovery.rpch.tech
